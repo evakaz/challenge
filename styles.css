@@ -28,3 +28,11 @@ h1 {
     display: grid;
     grid-template-columns: 50% 50%;
 }
+
+.vote button {
+    height: 10%;
+    width: 30%;
+    background-color: white;
+    border: none;
+    font-size: 30px;
+}
