@@ -6,10 +6,34 @@
     <link rel="stylesheet" href="/styles.css" />
 </head>
 <body>
-<h1>The Roadmen Bet</h1>
-<p>The bet ends in <span id="countdown"></span></p>
-
+    <div class="text">
+        <h1>The Roadmen Bet</h1>
+        <p>The bet ends in <span id="countdown"></span></p>
+        <img src="https://media.tenor.com/f1K5B1_l_00AAAAM/love-you-more-smile.gif">
+        <div class="vote">
+            <div class="eva">
+                <p>Vote Eva</p>
+                <button onclick="add_vote_eva()">Vote</button>
+                <p id="eva_votes">0</p>
+            </div>
+            <div class="others">
+                <p>Vote Triinu&Eliise</p>
+                <button onclick="add_vote_other()">Vote</button>
+                <p id="other_votes">0</p>
+            </div>
+        </div>
+    </div>
 <script>
+    function add_vote_eva(){
+        var evaVotesElement = document.getElementById("eva_votes");
+        var currentVotes = parseInt(evaVotesElement.innerText);
+        evaVotesElement.innerText = currentVotes + 1;
+    }
+    function add_vote_other(){
+        var otherVotesElement = document.getElementById("other_votes");
+        var currentVotes = parseInt(otherVotesElement.innerText);
+        otherVotesElement.innerText = currentVotes + 1;
+    }
     // Set the date we're counting down to
     var countDownDate = new Date("Mar 12, 2024 23:59:59").getTime();
 
@@ -31,6 +55,9 @@
         // Display the result in the element with id="demo"
         document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
             + minutes + "m " + seconds + "s ";
+
+        document.getElementById("progress").value = 30 - days;
+        // document.getElementById("progress").value = 25;
 
         // If the count down is finished, write some text
         if (distance < 0) {

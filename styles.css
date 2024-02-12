@@ -4,7 +4,27 @@ body {
 }
 p {
     font-size: 80px;
+    font-family: AppleGothic, sans-serif;
 }
 h1 {
     font-size: 100px;
+    letter-spacing: .10em;
+}
+
+#progress {
+    width: 100%;
+}
+
+.text {
+    text-align: center;
+    vertical-align: middle;
+    margin: 5%;
+}
+.text img {
+    height: 50%;
+}
+
+.vote {
+    display: grid;
+    grid-template-columns: 50% 50%;
 }
